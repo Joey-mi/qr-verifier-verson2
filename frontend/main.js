@@ -4,15 +4,17 @@ import {
   createActor,
   ii_integration,
 } from "../src/declarations/ii_integration";
+import {
+  createActor as createUserActor,
+  user,
+} from "../src/declarations/user";
 
-userCan = userCanister(
-  Principal.from_str("be2us-64aaa-aaaaa-qaabq-cai&id=bw4dl-smaaa-aaaaa-qaacq-cai")
-)
 
 import { AuthClient } from "@dfinity/auth-client";
 import { HttpAgent } from "@dfinity/agent";
-import { Principal } from "azle";
+
 let actor = ii_integration;
+let userActor = user;
 
 console.log(process.env.CANISTER_ID_INTERNET_IDENTITY);
 const whoAmIButton = document.getElementById("whoAmI");
@@ -48,6 +50,12 @@ loginButton.onclick = async (e) => {
     return false;
 };
 
+const testing = docuument.getElementBy("userTest")
+
+// document.querySelector('#app').innerHTML = 
+//   <h1> userActor.create </h1>
+
+
 // document.querySelector("#app").innerHTML = `
 //   <img src="logo2.svg" alt="DFINITY logo" />
 //   <br />
@@ -60,8 +68,8 @@ loginButton.onclick = async (e) => {
 //     <button id="whoAmI">Who Am I</button>
 //   </form>
 //   <section id="principal"></section>
-`
-// document.querySelector("#app").innerHTML = `
+
+// document.querySelector("#app").innerHTML = 
 //   <h1>Hello Vite!</h1>
 //   <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
 // `

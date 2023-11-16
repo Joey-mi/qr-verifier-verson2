@@ -14,7 +14,11 @@
       "post_install": ".kybra/user/post_install.sh",
       "candid": "canisters/user.did",
       "wasm": ".kybra/user/user.wasm",
-      "gzip": true
+      "gzip": true,
+      "declarations": {
+        "output": "src/declarations/user",
+        "node_compatibility": true
+      }
     },
     "internet_identity" : {
       "type": "pull",
