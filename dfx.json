@@ -1,0 +1,56 @@
+{
+  "canisters": {
+    "counter": {
+      "main": "canisters/counter/main.mo",
+      "type": "motoko"
+    },
+    "ii_integration": {
+      "main": "canisters/ii_integration/main.mo",
+      "type": "motoko"
+    },
+    "user": {
+      "type": "custom",
+      "build": "python -m kybra user canisters/user.py canisters/user.did",
+      "post_install": ".kybra/user/post_install.sh",
+      "candid": "canisters/user.did",
+      "wasm": ".kybra/user/user.wasm",
+      "gzip": true
+    },
+    "internet_identity" : {
+      "type": "pull",
+      "id": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+    },
+    "assets": {
+      "dependencies": [
+        "counter",
+        "ii_integration"
+      ],
+      "frontend": {
+        "entrypoint": "dist/index.html"
+      },
+      "source": [
+        "dist/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": ""
+    }
+  },
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:4943",
+      "type": "ephemeral"
+    },
+    "ic": {
+      "providers": [
+        "https://mainnet.dfinity.network"
+      ],
+      "type": "persistent"
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}

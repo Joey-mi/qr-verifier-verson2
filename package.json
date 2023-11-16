@@ -1,0 +1,17 @@
+{
+  "name": "qr-verifier-v2",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^2.9.13"
+  },
+  "dependencies": {
+    "@dfinity/agent": "^0.20.0",
+    "@dfinity/auth-client": "^0.20.0",
+    "buffer": "^6.0.3"
+  }
+}

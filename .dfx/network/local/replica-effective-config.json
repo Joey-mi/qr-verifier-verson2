@@ -1,0 +1,31 @@
+{
+  "replica_rev": "91bf38ff3cb927cb94027d9da513cd15f91a5b04",
+  "type": "replica",
+  "config": {
+    "http_handler": {
+      "port": null,
+      "write_port_to": "/Users/User/Repos/Icp_Projects/qr-verifier-verson2/.dfx/network/local/replica-configuration/replica-1.port"
+    },
+    "state_manager": {
+      "state_root": "/Users/User/Repos/Icp_Projects/qr-verifier-verson2/.dfx/network/local/state/replicated_state"
+    },
+    "crypto": {
+      "crypto_root": "/Users/User/Repos/Icp_Projects/qr-verifier-verson2/.dfx/network/local/state/crypto_store"
+    },
+    "artifact_pool": {
+      "consensus_pool_path": "/Users/User/Repos/Icp_Projects/qr-verifier-verson2/.dfx/network/local/state/consensus_pool"
+    },
+    "subnet_type": "application",
+    "btc_adapter": {
+      "enabled": false,
+      "socket_path": null
+    },
+    "canister_http_adapter": {
+      "enabled": true,
+      "socket_path": "/var/folders/sb/b8r8b79d4211ttjd_t_4m83w0000gn/T/ic-https-outcalls-adapter-socket.77384.1700153503"
+    },
+    "log_level": "error",
+    "artificial_delay": 600,
+    "use_old_metering": false
+  }
+}
