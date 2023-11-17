@@ -1,1 +1,15 @@
-service : {}
+type GetUserAgeResult = variant { Ok : int8; Err : GetUserErr };
+type GetUserErr = variant { UserDoesNotExist : principal };
+type User = record {
+  id : principal;
+  updated_at : opt nat64;
+  birthdate : nat64;
+  created_at : nat64;
+};
+service : {
+  create_user : (nat64) -> (User);
+  get_age : (principal) -> (GetUserAgeResult) query;
+  get_user : (principal) -> (opt User) query;
+  get_users : () -> (vec User) query;
+  test_time : () -> (nat64) query;
+}
