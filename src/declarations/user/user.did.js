@@ -8,7 +8,7 @@ export const idlFactory = ({ IDL }) => {
   const GetUserErr = IDL.Variant({ 'UserDoesNotExist' : IDL.Principal });
   const GetUserAgeResult = IDL.Variant({ 'Ok' : IDL.Int8, 'Err' : GetUserErr });
   return IDL.Service({
-    'create_user' : IDL.Func([IDL.Nat64], [User], []),
+    'create_user' : IDL.Func([IDL.Nat64], [IDL.Principal], []),
     'get_age' : IDL.Func([IDL.Principal], [GetUserAgeResult], ['query']),
     'get_user' : IDL.Func([IDL.Principal], [IDL.Opt(User)], ['query']),
     'get_users' : IDL.Func([], [IDL.Vec(User)], ['query']),

@@ -87,7 +87,7 @@ class UserCanister(Service):
 
 # Down here define how the functions work
 @update
-def create_user(birthdate: nat64) -> User:
+def create_user(birthdate: nat64) -> Principal:
     global get_epochseconds_divisor
 
     created = math.floor(ic.time() / get_epochseconds_divisor)
@@ -103,7 +103,7 @@ def create_user(birthdate: nat64) -> User:
 
     users.insert(user["id"], user)
 
-    return user
+    return user["id"]
 
 @query
 def get_user(identity: Principal) -> Opt[User]:
