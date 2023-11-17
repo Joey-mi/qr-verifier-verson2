@@ -11,7 +11,7 @@ type User = record {
 type Verifier = record { id : principal; created_at : nat64; website : text };
 service : () -> {
   caller_id : () -> (principal) query;
-  create_user : (nat64) -> (principal);
+  create_user : (nat64, principal) -> (principal);
   create_verifier : (text) -> (Verifier);
   delete_verifier : (principal) -> (GetVerifierResult);
   get_age : (principal) -> (GetUserAgeResult) query;

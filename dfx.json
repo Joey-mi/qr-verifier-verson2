@@ -45,7 +45,8 @@
         "entrypoint": "dist/index.html"
       },
       "source": [
-        "dist/"
+        "dist/",
+        "paths"
       ],
       "type": "assets"
     }

@@ -58,7 +58,7 @@ class GetUserErr(Variant, total=False):
 class UserCanister(Service):
     # define interface of the functions of the canister
     @service_update
-    def create_user(self, birthdate: nat64) -> Principal:
+    def create_user(self, birthdate: nat64, who: Principal) -> Principal:
         ...
 
     @service_query
@@ -87,12 +87,12 @@ class UserCanister(Service):
 
 # Down here define how the functions work
 @update
-def create_user(birthdate: nat64) -> Principal:
+def create_user(birthdate: nat64, who: Principal) -> Principal:
     global get_epochseconds_divisor
 
     created = math.floor(ic.time() / get_epochseconds_divisor)
 
-    id = generate_id()
+    id = who
    
     user: User = {
         "id": id,
@@ -133,8 +133,8 @@ def test_time() -> nat64:
     return math.floor(ic.time() / get_epochseconds_divisor)
 
 
-def generate_id() -> Principal:
-    random_bytes = secrets.token_bytes(29)
+# def generate_id() -> Principal:
+#     random_bytes = secrets.token_bytes(29)
 
-    return Principal.from_hex(random_bytes.hex())
+#     return Principal.from_hex(random_bytes.hex())
 

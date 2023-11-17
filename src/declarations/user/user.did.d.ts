@@ -11,7 +11,7 @@ export interface User {
   'created_at' : bigint,
 }
 export interface _SERVICE {
-  'create_user' : ActorMethod<[bigint], [Principal]>,
+  'create_user' : ActorMethod<[bigint, Principal], Principal>,
   'get_age' : ActorMethod<[Principal], GetUserAgeResult>,
   'get_user' : ActorMethod<[Principal], [] | [User]>,
   'get_users' : ActorMethod<[], Array<User>>,

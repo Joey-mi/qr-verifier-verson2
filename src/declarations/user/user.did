@@ -7,7 +7,7 @@ type User = record {
   created_at : nat64;
 };
 service : () -> {
-  create_user : (nat64) -> (principal);
+  create_user : (nat64, principal) -> (principal);
   get_age : (principal) -> (GetUserAgeResult) query;
   get_user : (principal) -> (opt User) query;
   get_users : () -> (vec User) query;

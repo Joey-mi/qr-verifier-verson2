@@ -9,7 +9,7 @@
 <body>
   <main>
     <div id="app"></div>
-     <h1 id="userTest"></h1>
+    <div id="logincontainer" class="container">
      <img src="logo2.svg" alt="DFINITY logo" />
       <br />
       <br />
@@ -21,6 +21,14 @@
         <button id="whoAmI">Who Am I</button>
       </form>
       <section id="principal"></section>
+    </div>
+    <div id="qrcontainer" class="container" style="display: none;">
+      <img src="" id="qrImage">
+      <form id="hiddenform" style="display: none;">
+        <input type="date" placeholder="Birthday" id="genBirthday">
+        <button type="submit">Submit</button>
+      </form>
+    </div>
   </main>
 <script type="module">
   /**
