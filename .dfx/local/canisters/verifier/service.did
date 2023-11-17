@@ -1,0 +1,8 @@
+type GetVerifierErr = variant { VerifierDoesNotExist : principal };
+type GetVerifierResult = variant { Ok : Verifier; Err : GetVerifierErr };
+type Verifier = record { id : principal; created_at : nat64; website : text };
+service : {
+  create_verifier : (text) -> (Verifier);
+  delete_user : (principal) -> (GetVerifierResult);
+  get_verifier : (principal) -> (opt Verifier) query;
+}
