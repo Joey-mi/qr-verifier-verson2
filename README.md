@@ -10,7 +10,6 @@ QR Code generation
 
 ### Need to implement:
 QR Code scanner
-SHA-256
 
 Instructions:
 
